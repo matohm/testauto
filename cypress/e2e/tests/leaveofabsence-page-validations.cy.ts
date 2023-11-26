@@ -13,7 +13,7 @@ beforeEach(() => {
   employeePage.clickNext();
 })
 
-describe.skip('Leave of absence page validations', () => {
+describe('Leave of absence page validations', () => {
   it('Input value validation', function() {
     // Personal number invalid: One character too short
     leaveOfAbsencePage.personalNumber().type('19121212121');

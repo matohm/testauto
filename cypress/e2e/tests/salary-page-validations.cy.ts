@@ -18,7 +18,7 @@ beforeEach(() => {
   leaveOfAbsencePage.clickNext();
 })
 
-describe.skip('Salary page validations', () => {
+describe('Salary page validations', () => {
   it('Input value validations', function() {
 
     // Personal number invalid: One character too short
@@ -51,7 +51,7 @@ describe.skip('Salary page validations', () => {
     salaryPage.verifyNoValidationTextExists();
 
     // NOTE!!! 
-    // Bug in application, skip for now
+    // Bug in application, salary should be >= 15000, skip for now
     //
     // Salary invalid: Too low
     // salaryPage.newSalary().click().clear();

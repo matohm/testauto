@@ -1,7 +1,7 @@
 import startPage from "../pages/start-page";
 import employeePage from "../pages/employee-page";
 
-describe.skip('Employee page validations', () => {
+describe('Employee page validations', () => {
   it('Mandatory field validations', function() {
     cy.visitForm();
     startPage.clickNext();
