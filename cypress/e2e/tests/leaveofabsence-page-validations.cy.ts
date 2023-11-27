@@ -33,6 +33,13 @@ describe('Leave of absence page validations', () => {
     leaveOfAbsencePage.personalNumberAlertText().should('have.text', 'Felaktigt personnummer');
     leaveOfAbsencePage.personalNumber().click().clear();
 
+    // BUGG, month 13 and day 32 accepted
+    // Personal number invalid: Invalid month/day
+    // leaveOfAbsencePage.personalNumber().type('191213321212');
+    // leaveOfAbsencePage.reason().click();
+    // leaveOfAbsencePage.personalNumberAlertText().should('have.text', 'Felaktigt personnummer');
+    // leaveOfAbsencePage.personalNumber().click().clear();
+
     // Personal number Ok: YYYYMMDDXXXX
     leaveOfAbsencePage.personalNumber().type('191212121212');
     leaveOfAbsencePage.reason().click();

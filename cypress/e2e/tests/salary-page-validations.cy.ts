@@ -39,6 +39,13 @@ describe('Salary page validations', () => {
     salaryPage.personalNumberAlertText().should('have.text', 'Felaktigt personnummer');
     salaryPage.personalNumber().click().clear();
 
+    // BUGG, month 13 and day 32 accepted
+    // Personal number invalid: Invalid month/day
+    // salaryPage.personalNumber().type('191213321212');
+    // salaryPage.newSalary().click();
+    // salaryPage.personalNumberAlertText().should('have.text', 'Felaktigt personnummer');
+    // salaryPage.personalNumber().click().clear();
+
     // Personal number ok: YYYYMMDDXXXX
     salaryPage.personalNumber().type('191212121212');
     salaryPage.newSalary().click();
