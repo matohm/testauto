@@ -8,7 +8,7 @@ Lön < 15000 tillåts felaktigt.
 Kommenterat bort detta från testet.
 
 Validering på personnummer är felaktig i formuläret. 
-Månad > 12 och Dag > 32 accepteras.
+Månad > 12 och Dag > 31 accepteras.
 Kommenterat bort detta från testerna
 
 ## Några saker att vidareutveckla:
