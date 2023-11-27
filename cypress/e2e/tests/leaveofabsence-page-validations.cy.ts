@@ -18,43 +18,43 @@ describe('Leave of absence page validations', () => {
     // Personal number invalid: One character too short
     leaveOfAbsencePage.personalNumber().type('19121212121');
     leaveOfAbsencePage.reason().click();
-    leaveOfAbsencePage.verifyValidationText('Felaktigt personnummer');
+    leaveOfAbsencePage.personalNumberAlertText().should('have.text', 'Felaktigt personnummer');
     leaveOfAbsencePage.personalNumber().click().clear();
 
     // Personal number invalid: One character too long
     leaveOfAbsencePage.personalNumber().type('1912121212121');
     leaveOfAbsencePage.reason().click();
-    salaryPage.verifyValidationText('Felaktigt personnummer');
+    leaveOfAbsencePage.personalNumberAlertText().should('have.text', 'Felaktigt personnummer');
     leaveOfAbsencePage.personalNumber().click().clear();
 
     // Personal number invalid: Non-number character
     leaveOfAbsencePage.personalNumber().type('19121212121B');
     leaveOfAbsencePage.reason().click();
-    leaveOfAbsencePage.verifyValidationText('Felaktigt personnummer');
+    leaveOfAbsencePage.personalNumberAlertText().should('have.text', 'Felaktigt personnummer');
     leaveOfAbsencePage.personalNumber().click().clear();
 
     // Personal number Ok: YYYYMMDDXXXX
     leaveOfAbsencePage.personalNumber().type('191212121212');
     leaveOfAbsencePage.reason().click();
-    leaveOfAbsencePage.verifyNoValidationTextExists();
+    leaveOfAbsencePage.personalNumberAlertText().should('not.exist');
     salaryPage.personalNumber().click().clear();
 
     // Personal number Ok: YYYYMMDD-XXXX
     leaveOfAbsencePage.personalNumber().type('19121212-1212');
     leaveOfAbsencePage.reason().click();
-    leaveOfAbsencePage.verifyNoValidationTextExists();
+    leaveOfAbsencePage.personalNumberAlertText().should('not.exist');
   });
 
   it('Mandatory field validations', function() {
     // Skip personal number
     leaveOfAbsencePage.fromDate().type('2024-01-01');
     leaveOfAbsencePage.nextButton().click();
-    leaveOfAbsencePage.verifyValidationText('Det här är en obligatorisk fråga');
+    leaveOfAbsencePage.personalNumberAlertText().should('have.text', 'Det här är en obligatorisk fråga');
     leaveOfAbsencePage.personalNumber().type('191212121212');
 
     // Skip from date
     leaveOfAbsencePage.fromDate().click().clear();
     leaveOfAbsencePage.nextButton().click();
-    leaveOfAbsencePage.verifyValidationText('Det här är en obligatorisk fråga');
+    leaveOfAbsencePage.fromDateAlertText().should('have.text', 'Det här är en obligatorisk fråga');
   });
 });

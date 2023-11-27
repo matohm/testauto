@@ -11,24 +11,24 @@ describe('Employee page validations', () => {
     employeePage.lastName().type('Matsson');
     employeePage.birthDate().type('1912-12-12');
     employeePage.nextButton().click();
-    employeePage.verifyMandatoryFieldTextVisible();
+    employeePage.fitForWorkAlertText().should('have.text', 'Det här är en obligatorisk fråga');
     employeePage.selectFitForWork('Ja');
 
     // Skip first name
     employeePage.firstName().click().clear();
     employeePage.nextButton().click();
-    employeePage.verifyMandatoryFieldTextVisible();
+    employeePage.firstNameAlertText().should('have.text', 'Det här är en obligatorisk fråga');
     employeePage.firstName().type('Mattias');
 
     // Skip last name
     employeePage.lastName().click().clear();
     employeePage.nextButton().click();
-    employeePage.verifyMandatoryFieldTextVisible();
+    employeePage.lastNameAlertText().should('have.text', 'Det här är en obligatorisk fråga');
     employeePage.lastName().type('Matsson');
 
     // Skip birth date
     employeePage.birthDate().click().clear();
     employeePage.nextButton().click();
-    employeePage.verifyMandatoryFieldTextVisible();
+    employeePage.birthDateAlertText().should('have.text', 'Det här är en obligatorisk fråga');
   });
 });

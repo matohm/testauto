@@ -5,6 +5,10 @@ export default {
   validationText : () => cy.get(".RHiWt"),
   sendButton : () => cy.get('.Y5sE8d > .l4V7wb > .NPEfkd'),
 
+  personalNumberAlertText : () => cy.get("#i3 > .RHiWt"),
+  newSalaryAlertText : () => cy.get("#i7 > .RHiWt"),
+  newSalaryFromDateAlertText : () => cy.get("#i11 > .RHiWt"),
+
   selectFitForWork(fitForWork: boolean) {
     if (fitForWork) {
       cy.get('.uHMk6b').click();
@@ -23,4 +27,3 @@ export default {
     this.verifyValidationText('Det här är en obligatorisk fråga');
   }
 }
-

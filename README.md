@@ -1,27 +1,27 @@
-Todo:
-Separate alert elements 
 
 # Kommentarer till uppgiften
 
-Autogenererade identifierare via Cypress Studio
-Inte haft tid att snygga till alla
-Hantera felalerts
+I början autogenererades identifierare via Cypress Studio. Jag har inte haft tid att snygga till alla dessa.
 
-Läggas till i rikigt scenario:
-Testdata-objekt
+Validering på månadslön är felaktig i formuläret. 
+Lön < 15000 tillåts felaktigt. 
+Kommenterat bort detta från testet.
 
-Validering på månadslön är felaktig
-Lön < 15000 tillåts felaktigt
-Kommenterat bort detta från testet
+## Några saker att vidareutveckla:
+- Testdata-objekt
+- Konstanter för textsträngar
 
 # Funderingar
 ## Ytterligare valideringar:
-Namn: Siffror, maxlängd
-Personnummer: Kontrollsiffra
+- Maxlängder på fält
+- Namn: ej siffror och andra otillåtna specialtecken
+- Födelsedatum: Ålder > X, ålder < Y
+- Personnummer: Kontrollsiffra, Ålder > X, ålder < Y
 
 ## Strukturella förbättringar
-Id:n på elementen
-Listboxen på förstasidan är lite svårjobbad, kanske kan bytas ut
+- Id:n på elementen
+- Listboxen på förstasidan är lite svårjobbad, kanske kan bytas ut
+- En kvittosida kunde underlätta kontroll att värdena sparats ordenligt.
 
 ----------------------------------------------------------
 
