@@ -1,4 +1,14 @@
+Todo:
+Separate alert elements 
+
 # Kommentarer till uppgiften
+
+Autogenererade identifierare via Cypress Studio
+Inte haft tid att snygga till alla
+Hantera felalerts
+
+Läggas till i rikigt scenario:
+Testdata-objekt
 
 Validering på månadslön är felaktig
 Lön < 15000 tillåts felaktigt
@@ -11,6 +21,7 @@ Personnummer: Kontrollsiffra
 
 ## Strukturella förbättringar
 Id:n på elementen
+Listboxen på förstasidan är lite svårjobbad, kanske kan bytas ut
 
 ----------------------------------------------------------
 

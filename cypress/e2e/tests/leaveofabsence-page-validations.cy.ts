@@ -5,12 +5,12 @@ import salaryPage from "../pages/salary-page";
 
 beforeEach(() => {
   cy.visitForm();
-  startPage.clickNext();
+  startPage.nextButton().click();
   employeePage.firstName().type('Mattias');
   employeePage.lastName().type('Matsson');
   employeePage.birthDate().type('1912-12-12');
   employeePage.selectFitForWork('Ja');
-  employeePage.clickNext();
+  employeePage.nextButton().click();
 })
 
 describe('Leave of absence page validations', () => {
@@ -48,13 +48,13 @@ describe('Leave of absence page validations', () => {
   it('Mandatory field validations', function() {
     // Skip personal number
     leaveOfAbsencePage.fromDate().type('2024-01-01');
-    leaveOfAbsencePage.clickNext();
+    leaveOfAbsencePage.nextButton().click();
     leaveOfAbsencePage.verifyValidationText('Det här är en obligatorisk fråga');
     leaveOfAbsencePage.personalNumber().type('191212121212');
 
     // Skip from date
     leaveOfAbsencePage.fromDate().click().clear();
-    leaveOfAbsencePage.clickNext();
+    leaveOfAbsencePage.nextButton().click();
     leaveOfAbsencePage.verifyValidationText('Det här är en obligatorisk fråga');
   });
 });

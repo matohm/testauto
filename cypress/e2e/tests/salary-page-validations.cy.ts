@@ -5,17 +5,17 @@ import salaryPage from "../pages/salary-page";
 
 beforeEach(() => {
   cy.visitForm();
-  startPage.clickNext();
+  startPage.nextButton().click();
   employeePage.firstName().type('Mattias');
   employeePage.lastName().type('Matsson');
   employeePage.birthDate().type('1912-12-12');
   employeePage.selectFitForWork('Ja');
-  employeePage.clickNext();
+  employeePage.nextButton().click();
 
   leaveOfAbsencePage.personalNumber().type('191212121212');
   leaveOfAbsencePage.fromDate().type('2024-01-01');
   leaveOfAbsencePage.reason().type('Netflix and chill');
-  leaveOfAbsencePage.clickNext();
+  leaveOfAbsencePage.nextButton().click();
 })
 
 describe('Salary page validations', () => {
@@ -83,20 +83,19 @@ describe('Salary page validations', () => {
     salaryPage.newSalary().type('33000');
     salaryPage.newSalaryFromDate().type('2024-02-01');
     salaryPage.selectFitForWork(true);
-    salaryPage.clickSend();
+    salaryPage.sendButton().click();
     salaryPage.verifyMandatoryFieldValidationText();
     salaryPage.personalNumber().type('191212121212');
 
     // Skip new salary
     salaryPage.newSalary().click().clear();;
-    salaryPage.clickSend();
+    salaryPage.sendButton().click();
     salaryPage.verifyMandatoryFieldValidationText();
     salaryPage.newSalary().type('33000');
 
     // Skip new salary from date
     salaryPage.newSalaryFromDate().click().clear();;
-    salaryPage.clickSend();
+    salaryPage.sendButton().click();
     salaryPage.verifyMandatoryFieldValidationText();
-    salaryPage.newSalaryFromDate().type('2024-02-01');
   });
 });
